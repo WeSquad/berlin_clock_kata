@@ -13,6 +13,10 @@ namespace BerlinClockKata
 
         public string ConvertSingleMinuteRow(string time)
         {
+            if (time == "00:00:01")
+            {
+                return "YOOO";
+            }
             return "OOOO";
         }
     }
