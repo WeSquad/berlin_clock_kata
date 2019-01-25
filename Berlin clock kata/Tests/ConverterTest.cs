@@ -21,7 +21,7 @@ namespace Tests
         {
             var converter = new Converter();
 
-            var singleMinuteRow = converter.ConvertSingleMinuteRow("00:00:01");
+            var singleMinuteRow = converter.ConvertSingleMinuteRow("00:01:00");
 
             Assert.AreEqual(singleMinuteRow, "YOOO");
         }
