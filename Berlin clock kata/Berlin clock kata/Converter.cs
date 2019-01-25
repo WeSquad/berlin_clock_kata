@@ -17,7 +17,7 @@ namespace BerlinClockKata
             var row = "";
             for (var i = 0; i < 4; i++)
             {
-                if(i < Int32.Parse(lastMinute))
+                if(i < Int32.Parse(lastMinute)%5)
                 { 
                     row += "Y";
                 }

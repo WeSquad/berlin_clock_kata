@@ -35,5 +35,15 @@ namespace Tests
 
             Assert.AreEqual(singleMinuteRow, "YYOO");
         }
+
+        [TestMethod]
+        public void TestSingleMinuteRowWithFiveMinute()
+        {
+            var converter = new Converter();
+
+            var singleMinuteRow = converter.ConvertSingleMinuteRow("00:05:00");
+
+            Assert.AreEqual(singleMinuteRow, "OOOO");
+        }
     }
 }
