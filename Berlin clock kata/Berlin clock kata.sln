@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Berlin clock kata", "Berlin clock kata\Berlin clock kata.csproj", "{D596D1F7-5FB4-4FC3-AC35-08B65E6EC7C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{B6BA5BF8-6600-4B72-922A-C226A6786806}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D596D1F7-5FB4-4FC3-AC35-08B65E6EC7C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D596D1F7-5FB4-4FC3-AC35-08B65E6EC7C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D596D1F7-5FB4-4FC3-AC35-08B65E6EC7C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D596D1F7-5FB4-4FC3-AC35-08B65E6EC7C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6BA5BF8-6600-4B72-922A-C226A6786806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6BA5BF8-6600-4B72-922A-C226A6786806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6BA5BF8-6600-4B72-922A-C226A6786806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6BA5BF8-6600-4B72-922A-C226A6786806}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {182582AE-EB41-4D20-AA3B-098771D4A87D}
+	EndGlobalSection
+EndGlobal
