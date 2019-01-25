@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Berlin_clock_kata
+namespace BerlinClockKata
 {
     class Program
     {

@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Berlin_clock_kata
+namespace BerlinClockKata
 {
-    class Converter
+    public class Converter
     {
         public string ConvertTime(string time)
         {
             return "";
+        }
+
+        public string ConvertSingleMinuteRow(string time)
+        {
+            return "OOOO";
         }
     }
 }

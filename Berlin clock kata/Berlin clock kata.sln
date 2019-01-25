@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Berlin clock kata", "Berlin clock kata\Berlin clock kata.csproj", "{D596D1F7-5FB4-4FC3-AC35-08B65E6EC7C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BerlinClockKata", "Berlin clock kata\BerlinClockKata.csproj", "{D596D1F7-5FB4-4FC3-AC35-08B65E6EC7C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{B6BA5BF8-6600-4B72-922A-C226A6786806}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CEE3A55F-0293-440A-8ADE-550C6BA2F6AD}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
