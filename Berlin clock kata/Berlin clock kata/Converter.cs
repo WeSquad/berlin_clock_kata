@@ -14,15 +14,19 @@ namespace BerlinClockKata
         public string ConvertSingleMinuteRow(string time)
         {
             var lastMinute = SelectLastMinute(time);
-            if (lastMinute == "1")
+            var row = "";
+            for (var i = 0; i < 4; i++)
             {
-                return "YOOO";
+                if(i < Int32.Parse(lastMinute))
+                { 
+                    row += "Y";
+                }
+                else
+                {
+                    row += "O";
+                }
             }
-            else if (lastMinute == "2")
-            {
-                return "YYOO";
-            }
-            return "OOOO";
+            return row;
         }
 
         private string SelectLastMinute(string time)
