@@ -89,6 +89,16 @@ namespace Tests
 
             Assert.AreEqual(fiveMinutesRow, "YYOOOOOOOOO");
         }
+
+        [TestMethod]
+        public void TestFiveMinutesRowTestWithEleveninutes()
+        {
+            var converter = new Converter();
+
+            var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:11:00");
+
+            Assert.AreEqual(fiveMinutesRow, "YYOOOOOOOOO");
+        }
         #endregion
     }
 }
