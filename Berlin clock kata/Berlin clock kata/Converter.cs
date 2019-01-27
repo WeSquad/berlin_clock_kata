@@ -32,15 +32,21 @@ namespace BerlinClockKata
         public string ConvertFiveMinutesRow(string time)
         {
             var minutes = SelectMinutes(time);
-            if (minutes == 5)
+            var row = "";
+
+            for (var i = 0; i < 11; i++)
             {
-                return "YOOOOOOOOOO";
+                if ((minutes/5) > i)
+                {
+                    row += "Y";
+                }
+                else
+                {
+                    row += "O";
+                }
             }
-            else if(minutes == 10)
-            {
-                return "YYOOOOOOOOO";
-            }
-            return "OOOOOOOOOOO";
+
+            return row;
         }
 
         private int SelectMinutes(string time)
