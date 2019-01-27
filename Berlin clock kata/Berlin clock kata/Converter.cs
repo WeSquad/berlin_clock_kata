@@ -29,6 +29,11 @@ namespace BerlinClockKata
             return row;
         }
 
+        public string ConvertFiveMinutesRow(string time)
+        {
+            return "";
+        }
+
         private string SelectLastMinute(string time)
         {
             return time.Substring(4, 1);
