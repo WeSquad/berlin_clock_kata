@@ -50,15 +50,17 @@ namespace BerlinClockKata
         public string ConvertSingleHoureRow(string time)
         {
             var houre = SelectHoure(time);
-            if (houre == 1)
+            var row = "";
+            for (var i = 0; i < 4; i++)
             {
-                return "ROOO";
+                if (i < houre % 5)
+                {
+                    row += "R";
+                    continue;
+                }
+                row += "O";
             }
-            else if (houre == 2)
-            {
-                return "RROO";
-            }
-            return "OOOO";
+            return row;
         }
 
         private bool IsAddLightToFiveMinutesRow(int iterator, int minutes)
