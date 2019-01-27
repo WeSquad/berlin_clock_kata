@@ -122,7 +122,7 @@ namespace Tests
         }
         #endregion
 
-        #region SingleHouretestRegion
+        #region SingleHouretestRegionTest
         [TestMethod]
         public void TestSingleHoureRowTestWithZeroHoure()
         {
@@ -154,7 +154,7 @@ namespace Tests
         }
         #endregion
 
-        #region FiveHouretestRegion
+        #region FiveHouretestRegionTest
         [TestMethod]
         public void TestFiveHoureRowTestWithZeroHoure()
         {
@@ -186,7 +186,7 @@ namespace Tests
         }
         #endregion
 
-        #region SecondLamp
+        #region SecondLampTest
         [TestMethod]
         public void TestSecondLanmpTestWithZeroHoure()
         {
@@ -226,6 +226,10 @@ namespace Tests
 
             Assert.AreEqual(secondLamp, "O");
         }
+        #endregion
+
+        #region converterTest
+
         #endregion
     }
 }
