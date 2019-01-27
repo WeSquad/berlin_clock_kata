@@ -238,6 +238,16 @@ namespace Tests
 
             Assert.AreEqual(secondLamp, "YOOOOOOOOOOOOOOOOOOOOOOO");
         }
+
+        [TestMethod]
+        public void TestConverterWith23Houre()
+        {
+            var converter = new Converter();
+
+            var secondLamp = converter.ConvertSecondLamp("23:59:59");
+
+            Assert.AreEqual(secondLamp, "ORRRRRRROYYRYYRYYRYYYYYY");
+        }
         #endregion
     }
 }
