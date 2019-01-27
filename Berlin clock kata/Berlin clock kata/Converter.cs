@@ -36,7 +36,7 @@ namespace BerlinClockKata
 
             for (var i = 0; i < 11; i++)
             {
-                if ((minutes/5) > i)
+                if (IsAddLightToFiveMinutesRow(i, minutes))
                 {
                     row += AddLightToFiveMinutesRow(i);
                     continue;
@@ -45,6 +45,11 @@ namespace BerlinClockKata
             }
 
             return row;
+        }
+
+        private bool IsAddLightToFiveMinutesRow(int iterator, int minutes)
+        {
+            return (minutes / 5) > iterator;
         }
 
         private string AddLightToFiveMinutesRow(int iterator)
