@@ -31,7 +31,7 @@ namespace BerlinClockKata
 
         public string ConvertFiveMinutesRow(string time)
         {
-            return "";
+            return "OOOOOOOOOOO";
         }
 
         private string SelectLastMinute(string time)

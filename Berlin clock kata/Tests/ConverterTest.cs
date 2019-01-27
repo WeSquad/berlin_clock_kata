@@ -6,6 +6,7 @@ namespace Tests
     [TestClass]
     public class ConverterTest
     {
+        #region singleMinuteRowTest
         [TestMethod]
         public void TestSingleMinuteRowWithZeroMinute()
         {
@@ -55,5 +56,18 @@ namespace Tests
 
             Assert.AreEqual(singleMinuteRow, "YOOO");
         }
+        #endregion
+
+        #region FiveMinutesRowTest
+        [TestMethod]
+        public void TestFiveMinutesRowTestWithZeroMinutes()
+        {
+            var converter = new Converter();
+
+            var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:00:00");
+
+            Assert.AreEqual(fiveMinutesRow, "OOOOOOOOOOO");
+        }
+        #endregion
     }
 }
