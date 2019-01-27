@@ -38,7 +38,7 @@ namespace BerlinClockKata
             {
                 if ((minutes/5) > i)
                 {
-                    if((i+1)%3 == 0)
+                    if(isAQuarter(i))
                     {
                         row += "R";
                     }
@@ -55,6 +55,11 @@ namespace BerlinClockKata
             }
 
             return row;
+        }
+
+        private bool isAQuarter(int iterator)
+        {
+            return (iterator + 1) % 3 == 0;
         }
 
         private int SelectMinutes(string time)
