@@ -123,7 +123,15 @@ namespace Tests
         #endregion
 
         #region SingleHouretestRegion
+        [TestMethod]
+        public void TestSingleHoureRowTestWithZeroHoure()
+        {
+            var converter = new Converter();
 
+            var singleHoureRow = converter.ConvertSingleHoureRow("00:00:00");
+
+            Assert.AreEqual(singleHoureRow, "OOOO");
+        }
         #endregion
     }
 }

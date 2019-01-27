@@ -49,7 +49,7 @@ namespace BerlinClockKata
 
         public string ConvertSingleHoureRow(string time)
         {
-            return "";
+            return "OOOO";
         }
 
             private bool IsAddLightToFiveMinutesRow(int iterator, int minutes)
