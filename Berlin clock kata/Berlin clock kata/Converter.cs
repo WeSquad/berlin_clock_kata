@@ -38,16 +38,8 @@ namespace BerlinClockKata
             {
                 if ((minutes/5) > i)
                 {
-                    if(isAQuarter(i))
-                    {
-                        row += "R";
-                        continue;
-                    }
-                    else
-                    {
-                        row += "Y";
-                        continue;
-                    }   
+                    row += AddLightToFiveMinutesRow(i);
+                    continue;
                 }
                 row += "O";
             }
@@ -55,7 +47,16 @@ namespace BerlinClockKata
             return row;
         }
 
-        private bool isAQuarter(int iterator)
+        private string AddLightToFiveMinutesRow(int iterator)
+        {
+            if (IsAQuarter(iterator))
+            {
+                return "R";
+            }
+            return "Y";
+        }
+
+        private bool IsAQuarter(int iterator)
         {
             return (iterator + 1) % 3 == 0;
         }
