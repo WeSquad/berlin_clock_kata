@@ -8,7 +8,13 @@ namespace BerlinClockKata
     {
         public string ConvertTime(string time)
         {
-            return "";
+            var row = "";
+            row += ConvertSecondLamp(time);
+            row += ConvertFiveHoureRow(time);
+            row += ConvertSingleHoureRow(time);
+            row += ConvertFiveMinutesRow(time);
+            row += ConvertSingleMinuteRow(time);
+            return row;
         }
 
         public string ConvertSingleMinuteRow(string time)

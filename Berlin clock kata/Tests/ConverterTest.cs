@@ -229,7 +229,15 @@ namespace Tests
         #endregion
 
         #region converterTest
+        [TestMethod]
+        public void TestConverterWithZeroHoure()
+        {
+            var converter = new Converter();
 
+            var secondLamp = converter.ConvertSecondLamp("00:00:00");
+
+            Assert.AreEqual(secondLamp, "YOOOOOOOOOOOOOOOOOOOOOOO");
+        }
         #endregion
     }
 }
