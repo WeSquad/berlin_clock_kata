@@ -47,7 +47,12 @@ namespace BerlinClockKata
             return row;
         }
 
-        private bool IsAddLightToFiveMinutesRow(int iterator, int minutes)
+        public string ConvertSingleHoureRow(string time)
+        {
+            return "";
+        }
+
+            private bool IsAddLightToFiveMinutesRow(int iterator, int minutes)
         {
             return (minutes / 5) > iterator;
         }

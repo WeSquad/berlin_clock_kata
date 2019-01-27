@@ -121,5 +121,9 @@ namespace Tests
             Assert.AreEqual(fiveMinutesRow, "YYRYYRYYRYY");
         }
         #endregion
+
+        #region SingleHouretestRegion
+
+        #endregion
     }
 }
