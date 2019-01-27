@@ -82,15 +82,16 @@ namespace BerlinClockKata
         public string ConvertSecondLamp(string time)
         {
             var seconds = SelectSeconds(time);
-            if (seconds == 1)
-            {
-                return "O";
-            }
-            else if (seconds == 3)
+            if (IsEven(seconds))
             {
                 return "O";
             }
             return "R";
+        }
+
+        private bool IsEven(int integer)
+        {
+            return integer % 2 != 0;
         }
 
         private bool IsAddLightToFiveMinutesRow(int iterator, int minutes)
