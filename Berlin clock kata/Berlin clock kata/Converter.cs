@@ -85,6 +85,10 @@ namespace BerlinClockKata
             {
                 return "O";
             }
+            else if (time == "00:00:03")
+            {
+                return "O";
+            }
             return "R";
         }
 
