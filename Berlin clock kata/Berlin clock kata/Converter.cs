@@ -41,17 +41,15 @@ namespace BerlinClockKata
                     if(isAQuarter(i))
                     {
                         row += "R";
+                        continue;
                     }
                     else
                     {
                         row += "Y";
-                    }
-                    
+                        continue;
+                    }   
                 }
-                else
-                {
-                    row += "O";
-                }
+                row += "O";
             }
 
             return row;
