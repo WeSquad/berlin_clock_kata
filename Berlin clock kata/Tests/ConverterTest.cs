@@ -174,6 +174,16 @@ namespace Tests
 
             Assert.AreEqual(fiveHoureRow, "ROOO");
         }
+
+        [TestMethod]
+        public void TestFiveHoureRowTestWithTenHoure()
+        {
+            var converter = new Converter();
+
+            var fiveHoureRow = converter.ConvertFiveHoureRow("10:00:00");
+
+            Assert.AreEqual(fiveHoureRow, "RROO");
+        }
         #endregion
     }
 }
