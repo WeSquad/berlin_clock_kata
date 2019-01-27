@@ -185,5 +185,17 @@ namespace Tests
             Assert.AreEqual(fiveHoureRow, "RROO");
         }
         #endregion
+
+        #region SecondLamp
+        [TestMethod]
+        public void TestSecondLanmpTestWithZeroHoure()
+        {
+            var converter = new Converter();
+
+            var secondLamp = converter.ConvertSecondLamp("00:00:00");
+
+            Assert.AreEqual(secondLamp, "R");
+        }
+        #endregion
     }
 }
