@@ -81,11 +81,12 @@ namespace BerlinClockKata
 
         public string ConvertSecondLamp(string time)
         {
-            if (time == "00:00:01")
+            var seconds = SelectSeconds(time);
+            if (seconds == 1)
             {
                 return "O";
             }
-            else if (time == "00:00:03")
+            else if (seconds == 3)
             {
                 return "O";
             }
@@ -119,6 +120,11 @@ namespace BerlinClockKata
         private int SelectHoure(string time)
         {
             return Int32.Parse(time.Substring(0, 2));
+        }
+
+        private int SelectSeconds(string time)
+        {
+            return Int32.Parse(time.Substring(6, 2));
         }
 
         private string SelectLastMinute(string time)
