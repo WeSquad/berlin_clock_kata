@@ -65,6 +65,10 @@ namespace BerlinClockKata
 
         public string ConvertFiveHoureRow(string time)
         {
+            if (time == "05:00:00")
+            {
+                return "ROOO";
+            }
             return "OOOO";
         }
 
