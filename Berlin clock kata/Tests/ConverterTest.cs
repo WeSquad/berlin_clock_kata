@@ -155,7 +155,15 @@ namespace Tests
         #endregion
 
         #region FiveHouretestRegion
-        
+        [TestMethod]
+        public void TestFiveHoureRowTestWithZeroHoure()
+        {
+            var converter = new Converter();
+
+            var fiveHoureRow = converter.ConvertFiveHoureRow("00:00:00");
+
+            Assert.AreEqual(fiveHoureRow, "OOOO");
+        }
         #endregion
     }
 }
