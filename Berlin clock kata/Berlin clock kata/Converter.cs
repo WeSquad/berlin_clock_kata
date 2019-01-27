@@ -38,7 +38,15 @@ namespace BerlinClockKata
             {
                 if ((minutes/5) > i)
                 {
-                    row += "Y";
+                    if((i+1)%3 == 0)
+                    {
+                        row += "R";
+                    }
+                    else
+                    {
+                        row += "Y";
+                    }
+                    
                 }
                 else
                 {
