@@ -248,6 +248,16 @@ namespace Tests
 
             Assert.AreEqual(secondLamp, "ORRRRRRROYYRYYRYYRYYYYYY");
         }
+
+        [TestMethod]
+        public void TestConverterWithRandomHoure()
+        {
+            var converter = new Converter();
+
+            var secondLamp = converter.ConvertSecondLamp("16:50:06");
+
+            Assert.AreEqual(secondLamp, "YRRROROOOYYRYYRYYRYOOOOO");
+        }
         #endregion
     }
 }
