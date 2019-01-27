@@ -138,7 +138,7 @@ namespace Tests
         {
             var converter = new Converter();
 
-            var singleHoureRow = converter.ConvertSingleHoureRow("00:01:00");
+            var singleHoureRow = converter.ConvertSingleHoureRow("01:00:00");
 
             Assert.AreEqual(singleHoureRow, "ROOO");
         }
@@ -148,7 +148,7 @@ namespace Tests
         {
             var converter = new Converter();
 
-            var singleHoureRow = converter.ConvertSingleHoureRow("00:02:00");
+            var singleHoureRow = converter.ConvertSingleHoureRow("02:00:00");
 
             Assert.AreEqual(singleHoureRow, "RROO");
         }

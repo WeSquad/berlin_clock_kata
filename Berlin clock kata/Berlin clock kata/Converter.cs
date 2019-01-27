@@ -49,11 +49,12 @@ namespace BerlinClockKata
 
         public string ConvertSingleHoureRow(string time)
         {
-            if(time == "00:01:00")
+            var houre = SelectHoure(time);
+            if (houre == 1)
             {
                 return "ROOO";
             }
-            else if (time == "00:02:00")
+            else if (houre == 2)
             {
                 return "RROO";
             }
@@ -83,7 +84,12 @@ namespace BerlinClockKata
         {
             return Int32.Parse(time.Substring(3, 2));
         }
-        
+
+        private int SelectHoure(string time)
+        {
+            return Int32.Parse(time.Substring(0, 2));
+        }
+
         private string SelectLastMinute(string time)
         {
             return time.Substring(4, 1);
