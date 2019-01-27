@@ -132,6 +132,16 @@ namespace Tests
 
             Assert.AreEqual(singleHoureRow, "OOOO");
         }
+
+        [TestMethod]
+        public void TestSingleHoureRowTestWithOneHoure()
+        {
+            var converter = new Converter();
+
+            var singleHoureRow = converter.ConvertSingleHoureRow("00:01:00");
+
+            Assert.AreEqual(singleHoureRow, "ROOO");
+        }
         #endregion
     }
 }
