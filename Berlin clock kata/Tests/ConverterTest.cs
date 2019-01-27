@@ -206,6 +206,16 @@ namespace Tests
 
             Assert.AreEqual(secondLamp, "O");
         }
+
+        [TestMethod]
+        public void TestSecondLanmpTestWithTwoSecond()
+        {
+            var converter = new Converter();
+
+            var secondLamp = converter.ConvertSecondLamp("00:00:02");
+
+            Assert.AreEqual(secondLamp, "R");
+        }
         #endregion
     }
 }
