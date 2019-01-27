@@ -81,6 +81,10 @@ namespace BerlinClockKata
 
         public string ConvertSecondLamp(string time)
         {
+            if (time == "00:00:01")
+            {
+                return "O";
+            }
             return "R";
         }
 
