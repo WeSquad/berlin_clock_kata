@@ -18,41 +18,38 @@ namespace Tests
         [TestMethod]
         public void TestSingleMinuteRowWithZeroMinute()
         {
-            var singleMinuteRow = converter.ConvertSingleMinuteRow("00:00:00");
-
-            Assert.AreEqual("OOOO", singleMinuteRow);
+            AssertBerlinMinutes("00:00:00", "OOOO");
         }
 
         [TestMethod]
         public void TestSingleMinuteRowWithOneMinute()
         {
-            var singleMinuteRow = converter.ConvertSingleMinuteRow("00:01:00");
-
-            Assert.AreEqual("YOOO", singleMinuteRow);
+            AssertBerlinMinutes("00:01:00", "YOOO");
         }
 
         [TestMethod]
         public void TestSingleMinuteRowWithTwoMinute()
         {
-            var singleMinuteRow = converter.ConvertSingleMinuteRow("00:02:00");
-
-            Assert.AreEqual("YYOO", singleMinuteRow);
+            AssertBerlinMinutes("00:02:00", "YYOO");
         }
 
         [TestMethod]
         public void TestSingleMinuteRowWithFiveMinute()
         {
-            var singleMinuteRow = converter.ConvertSingleMinuteRow("00:05:00");
-
-            Assert.AreEqual("OOOO", singleMinuteRow);
+            AssertBerlinMinutes("00:05:00", "OOOO");
         }
 
         [TestMethod]
         public void TestSingleMinuteRowWithSixMinute()
         {
-            var singleMinuteRow = converter.ConvertSingleMinuteRow("00:06:00");
+            AssertBerlinMinutes("00:06:00", "YOOO");
+        }
 
-            Assert.AreEqual("YOOO", singleMinuteRow);
+        private void AssertBerlinMinutes(string digitalTime, string expectedBerlinMinutes)
+        {
+            var singleMinuteRow = converter.ConvertSingleMinuteRow(digitalTime);
+
+            Assert.AreEqual(expectedBerlinMinutes, singleMinuteRow);
         }
         #endregion
 
