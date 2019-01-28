@@ -6,6 +6,8 @@ namespace Tests
     [TestClass]
     public class ConverterTest
     {
+
+
         #region singleMinuteRowTest
         [TestMethod]
         public void TestSingleMinuteRowWithZeroMinute()
@@ -14,7 +16,7 @@ namespace Tests
 
             var singleMinuteRow = converter.ConvertSingleMinuteRow("00:00:00");
 
-            Assert.AreEqual(singleMinuteRow, "OOOO");
+            Assert.AreEqual("OOOO", singleMinuteRow);
         }
 
         [TestMethod]
@@ -24,7 +26,7 @@ namespace Tests
 
             var singleMinuteRow = converter.ConvertSingleMinuteRow("00:01:00");
 
-            Assert.AreEqual(singleMinuteRow, "YOOO");
+            Assert.AreEqual("YOOO", singleMinuteRow);
         }
 
         [TestMethod]
@@ -34,7 +36,7 @@ namespace Tests
 
             var singleMinuteRow = converter.ConvertSingleMinuteRow("00:02:00");
 
-            Assert.AreEqual(singleMinuteRow, "YYOO");
+            Assert.AreEqual("YYOO", singleMinuteRow);
         }
 
         [TestMethod]
@@ -44,7 +46,7 @@ namespace Tests
 
             var singleMinuteRow = converter.ConvertSingleMinuteRow("00:05:00");
 
-            Assert.AreEqual(singleMinuteRow, "OOOO");
+            Assert.AreEqual("OOOO", singleMinuteRow);
         }
 
         [TestMethod]
@@ -54,7 +56,7 @@ namespace Tests
 
             var singleMinuteRow = converter.ConvertSingleMinuteRow("00:06:00");
 
-            Assert.AreEqual(singleMinuteRow, "YOOO");
+            Assert.AreEqual("YOOO", singleMinuteRow);
         }
         #endregion
 
@@ -66,7 +68,7 @@ namespace Tests
 
             var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:00:00");
 
-            Assert.AreEqual(fiveMinutesRow, "OOOOOOOOOOO");
+            Assert.AreEqual("OOOOOOOOOOO", fiveMinutesRow);
         }
 
         [TestMethod]
@@ -76,7 +78,7 @@ namespace Tests
 
             var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:05:00");
 
-            Assert.AreEqual(fiveMinutesRow, "YOOOOOOOOOO");
+            Assert.AreEqual("YOOOOOOOOOO", fiveMinutesRow);
         }
 
 
@@ -87,7 +89,7 @@ namespace Tests
 
             var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:10:00");
 
-            Assert.AreEqual(fiveMinutesRow, "YYOOOOOOOOO");
+            Assert.AreEqual("YYOOOOOOOOO", fiveMinutesRow);
         }
 
         [TestMethod]
@@ -97,7 +99,7 @@ namespace Tests
 
             var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:11:00");
 
-            Assert.AreEqual(fiveMinutesRow, "YYOOOOOOOOO");
+            Assert.AreEqual("YYOOOOOOOOO", fiveMinutesRow);
         }
 
         [TestMethod]
@@ -107,7 +109,7 @@ namespace Tests
 
             var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:15:00");
 
-            Assert.AreEqual(fiveMinutesRow, "YYROOOOOOOO");
+            Assert.AreEqual("YYROOOOOOOO", fiveMinutesRow);
         }
         
 
@@ -118,7 +120,7 @@ namespace Tests
 
             var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:59:00");
 
-            Assert.AreEqual(fiveMinutesRow, "YYRYYRYYRYY");
+            Assert.AreEqual("YYRYYRYYRYY", fiveMinutesRow);
         }
         #endregion
 
@@ -130,7 +132,7 @@ namespace Tests
 
             var singleHoureRow = converter.ConvertSingleHoureRow("00:00:00");
 
-            Assert.AreEqual(singleHoureRow, "OOOO");
+            Assert.AreEqual("OOOO", singleHoureRow);
         }
 
         [TestMethod]
@@ -140,7 +142,7 @@ namespace Tests
 
             var singleHoureRow = converter.ConvertSingleHoureRow("01:00:00");
 
-            Assert.AreEqual(singleHoureRow, "ROOO");
+            Assert.AreEqual("ROOO", singleHoureRow);
         }
 
         [TestMethod]
@@ -150,7 +152,7 @@ namespace Tests
 
             var singleHoureRow = converter.ConvertSingleHoureRow("02:00:00");
 
-            Assert.AreEqual(singleHoureRow, "RROO");
+            Assert.AreEqual("RROO", singleHoureRow);
         }
         #endregion
 
@@ -162,7 +164,7 @@ namespace Tests
 
             var fiveHoureRow = converter.ConvertFiveHoureRow("00:00:00");
 
-            Assert.AreEqual(fiveHoureRow, "OOOO");
+            Assert.AreEqual("OOOO", fiveHoureRow);
         }
 
         [TestMethod]
@@ -172,7 +174,7 @@ namespace Tests
 
             var fiveHoureRow = converter.ConvertFiveHoureRow("05:00:00");
 
-            Assert.AreEqual(fiveHoureRow, "ROOO");
+            Assert.AreEqual("ROOO", fiveHoureRow);
         }
 
         [TestMethod]
@@ -182,7 +184,7 @@ namespace Tests
 
             var fiveHoureRow = converter.ConvertFiveHoureRow("10:00:00");
 
-            Assert.AreEqual(fiveHoureRow, "RROO");
+            Assert.AreEqual("RROO", fiveHoureRow);
         }
         #endregion
 
@@ -194,7 +196,7 @@ namespace Tests
 
             var secondLamp = converter.ConvertSecondLamp("00:00:00");
 
-            Assert.AreEqual(secondLamp, "Y");
+            Assert.AreEqual("Y", secondLamp);
         }
 
         [TestMethod]
@@ -204,7 +206,7 @@ namespace Tests
 
             var secondLamp = converter.ConvertSecondLamp("00:00:01");
 
-            Assert.AreEqual(secondLamp, "O");
+            Assert.AreEqual("O", secondLamp);
         }
 
         [TestMethod]
@@ -214,7 +216,7 @@ namespace Tests
 
             var secondLamp = converter.ConvertSecondLamp("00:00:02");
 
-            Assert.AreEqual(secondLamp, "Y");
+            Assert.AreEqual("Y", secondLamp);
         }
 
         [TestMethod]
@@ -224,19 +226,19 @@ namespace Tests
 
             var secondLamp = converter.ConvertSecondLamp("00:00:03");
 
-            Assert.AreEqual(secondLamp, "O");
+            Assert.AreEqual("O", secondLamp);
         }
         #endregion
 
-        #region converterTest
+        #region ConvertTimeTest
         [TestMethod]
         public void TestConverterWithZeroHoure()
         {
             var converter = new Converter();
 
-            var secondLamp = converter.ConvertTime("00:00:00");
+            var time = converter.ConvertTime("00:00:00");
 
-            Assert.AreEqual(secondLamp, "YOOOOOOOOOOOOOOOOOOOOOOO");
+            Assert.AreEqual("YOOOOOOOOOOOOOOOOOOOOOOO", time);
         }
 
         [TestMethod]
@@ -244,9 +246,9 @@ namespace Tests
         {
             var converter = new Converter();
 
-            var secondLamp = converter.ConvertTime("23:59:59");
+            var time = converter.ConvertTime("23:59:59");
 
-            Assert.AreEqual(secondLamp, "ORRRRRRROYYRYYRYYRYYYYYY");
+            Assert.AreEqual("ORRRRRRROYYRYYRYYRYYYYYY", time);
         }
 
         [TestMethod]
@@ -254,9 +256,9 @@ namespace Tests
         {
             var converter = new Converter();
 
-            var secondLamp = converter.ConvertTime("16:50:06");
+            var time = converter.ConvertTime("16:50:06");
 
-            Assert.AreEqual(secondLamp, "YRRROROOOYYRYYRYYRYOOOOO");
+            Assert.AreEqual("YRRROROOOYYRYYRYYRYOOOOO", time);
         }
         #endregion
     }
