@@ -48,17 +48,10 @@ namespace BerlinClockKata
         public string ConvertFiveHoureRow(string time)
         {
             var houre = SelectHoure(time);
-            var row = "";
-            for (var i = 0; i < 4; i++)
-            {
-                if((houre / 5) > i)
-                {
-                    row += "R";
-                    continue;
-                }
-                row += "O";
-            }
-            return row;
+            var lightsOn = houre / 5;
+            var lightsOff = 4 - lightsOn;
+
+            return "R".Repeat(lightsOn) + "O".Repeat(lightsOff);
         }
 
         public string ConvertSecondLamp(string time)
