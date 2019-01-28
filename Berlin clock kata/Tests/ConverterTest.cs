@@ -18,38 +18,38 @@ namespace Tests
         [TestMethod]
         public void TestSingleMinuteRowWithZeroMinute()
         {
-            AssertBerlinMinutes("00:00:00", "OOOO");
+            AssertBerlinSingleMinutes("00:00:00", "OOOO");
         }
 
         [TestMethod]
         public void TestSingleMinuteRowWithOneMinute()
         {
-            AssertBerlinMinutes("00:01:00", "YOOO");
+            AssertBerlinSingleMinutes("00:01:00", "YOOO");
         }
 
         [TestMethod]
         public void TestSingleMinuteRowWithTwoMinute()
         {
-            AssertBerlinMinutes("00:02:00", "YYOO");
+            AssertBerlinSingleMinutes("00:02:00", "YYOO");
         }
 
         [TestMethod]
         public void TestSingleMinuteRowWithFiveMinute()
         {
-            AssertBerlinMinutes("00:05:00", "OOOO");
+            AssertBerlinSingleMinutes("00:05:00", "OOOO");
         }
 
         [TestMethod]
         public void TestSingleMinuteRowWithSixMinute()
         {
-            AssertBerlinMinutes("00:06:00", "YOOO");
+            AssertBerlinSingleMinutes("00:06:00", "YOOO");
         }
 
-        private void AssertBerlinMinutes(string digitalTime, string expectedBerlinMinutes)
+        private void AssertBerlinSingleMinutes(string digitalTime, string expectedBerlinSingleMinutes)
         {
             var singleMinuteRow = converter.ConvertSingleMinuteRow(digitalTime);
 
-            Assert.AreEqual(expectedBerlinMinutes, singleMinuteRow);
+            Assert.AreEqual(expectedBerlinSingleMinutes, singleMinuteRow);
         }
         #endregion
 
@@ -57,51 +57,44 @@ namespace Tests
         [TestMethod]
         public void TestFiveMinutesRowTestWithZeroMinutes()
         {
-            var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:00:00");
-
-            Assert.AreEqual("OOOOOOOOOOO", fiveMinutesRow);
+            AssertBerlinFiveMinutes("00:00:00", "OOOOOOOOOOO");
         }
 
         [TestMethod]
         public void TestFiveMinutesRowTestWithFiveMinutes()
         {
-            var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:05:00");
-
-            Assert.AreEqual("YOOOOOOOOOO", fiveMinutesRow);
-        }
-
-
-        [TestMethod]
-        public void TestFiveMinutesRowTestWithTeninutes()
-        {
-            var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:10:00");
-
-            Assert.AreEqual("YYOOOOOOOOO", fiveMinutesRow);
+            AssertBerlinFiveMinutes("00:05:00", "YOOOOOOOOOO");
         }
 
         [TestMethod]
-        public void TestFiveMinutesRowTestWithEleveninutes()
+        public void TestFiveMinutesRowTestWithTenMinutes()
         {
-            var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:11:00");
-
-            Assert.AreEqual("YYOOOOOOOOO", fiveMinutesRow);
+            AssertBerlinFiveMinutes("00:10:00", "YYOOOOOOOOO");
         }
 
         [TestMethod]
-        public void TestFiveMinutesRowTestWithFifteeninutes()
+        public void TestFiveMinutesRowTestWithEleveMinutes()
         {
-            var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:15:00");
-
-            Assert.AreEqual("YYROOOOOOOO", fiveMinutesRow);
+            AssertBerlinFiveMinutes("00:11:00", "YYOOOOOOOOO");
         }
-        
 
         [TestMethod]
-        public void TestFiveMinutesRowTestWithFifyNineinutes()
+        public void TestFiveMinutesRowTestWithFifteenMinutes()
         {
-            var fiveMinutesRow = converter.ConvertFiveMinutesRow("00:59:00");
+            AssertBerlinFiveMinutes("00:15:00", "YYROOOOOOOO");
+        }
 
-            Assert.AreEqual("YYRYYRYYRYY", fiveMinutesRow);
+        [TestMethod]
+        public void TestFiveMinutesRowTestWithFifyNineMinutes()
+        {
+            AssertBerlinFiveMinutes("00:59:00", "YYRYYRYYRYY");
+        }
+
+        private void AssertBerlinFiveMinutes(string digitalTime, string expectedBerlinFiveMinutes)
+        {
+            var fiveMinutesRow = converter.ConvertFiveMinutesRow(digitalTime);
+
+            Assert.AreEqual(expectedBerlinFiveMinutes, fiveMinutesRow);
         }
         #endregion
 
