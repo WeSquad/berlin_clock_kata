@@ -8,8 +8,7 @@ namespace BerlinClockKata
     {
         public string ConvertTime(string time)
         {
-            var row = "";
-            row += ConvertSecondLamp(time);
+            var row = ConvertSecondLamp(time);
             row += ConvertFiveHoureRow(time);
             row += ConvertSingleHoureRow(time);
             row += ConvertFiveMinutesRow(time);
@@ -20,19 +19,9 @@ namespace BerlinClockKata
         public string ConvertSingleMinuteRow(string time)
         {
             var lastMinute = SelectLastMinute(time);
-            var row = "";
-            for (var i = 0; i < 4; i++)
-            {
-                if(i < Int32.Parse(lastMinute)%5)
-                { 
-                    row += "Y";
-                }
-                else
-                {
-                    row += "O";
-                }
-            }
-            return row;
+            var lightsOn = Int32.Parse(lastMinute) % 5;
+            var lightsOff = 4 - lightsOn;
+            return new string('Y', lightsOn) + new string('O', lightsOff);
         }
 
         public string ConvertFiveMinutesRow(string time)
