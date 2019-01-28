@@ -18,10 +18,11 @@ namespace BerlinClockKata
 
         public string ConvertSingleMinuteRow(string time)
         {
-            var lastMinute = SelectLastMinute(time);
-            var lightsOn = Int32.Parse(lastMinute) % 5;
+            var minutes = SelectMinutes(time);
+            var lightsOn = minutes % 5;
             var lightsOff = 4 - lightsOn;
-            return new string('Y', lightsOn) + new string('O', lightsOff);
+
+            return "Y".Repeat(lightsOn) + "O".Repeat(lightsOff);
         }
 
         public string ConvertFiveMinutesRow(string time)
@@ -82,25 +83,6 @@ namespace BerlinClockKata
             return integer % 2 != 0;
         }
 
-        private bool IsAddLightToFiveMinutesRow(int iterator, int minutes)
-        {
-            return (minutes / 5) > iterator;
-        }
-
-        private string AddLightToFiveMinutesRow(int iterator)
-        {
-            if (IsAQuarter(iterator))
-            {
-                return "R";
-            }
-            return "Y";
-        }
-
-        private bool IsAQuarter(int iterator)
-        {
-            return (iterator + 1) % 3 == 0;
-        }
-
         private int SelectMinutes(string time)
         {
             return Int32.Parse(time.Substring(3, 2));
@@ -114,11 +96,6 @@ namespace BerlinClockKata
         private int SelectSeconds(string time)
         {
             return Int32.Parse(time.Substring(6, 2));
-        }
-
-        private string SelectLastMinute(string time)
-        {
-            return time.Substring(4, 1);
         }
     }
 
