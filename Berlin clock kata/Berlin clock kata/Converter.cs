@@ -27,19 +27,12 @@ namespace BerlinClockKata
         public string ConvertFiveMinutesRow(string time)
         {
             var minutes = SelectMinutes(time);
-            var row = "";
+            var lightsOn = minutes / 5;
+            var lightsOff = 11 - lightsOn;
+            var quarters = lightsOn / 3;
+            var normalLightsOn = lightsOn - (quarters * 3);
 
-            for (var i = 0; i < 11; i++)
-            {
-                if (IsAddLightToFiveMinutesRow(i, minutes))
-                {
-                    row += AddLightToFiveMinutesRow(i);
-                    continue;
-                }
-                row += "O";
-            }
-
-            return row;
+            return "YYR".Repeat(quarters) + "Y".Repeat(normalLightsOn) + "O".Repeat(lightsOff);
         }
 
         public string ConvertSingleHoureRow(string time)
@@ -127,5 +120,11 @@ namespace BerlinClockKata
         {
             return time.Substring(4, 1);
         }
+    }
+
+    public static class StringExtensions
+    {
+        public static string Repeat(this string s, int n)
+            => new StringBuilder(s.Length * n).Insert(0, s, n).ToString();
     }
 }
