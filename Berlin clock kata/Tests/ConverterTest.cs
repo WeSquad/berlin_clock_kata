@@ -187,27 +187,28 @@ namespace Tests
 
         #region ConvertTimeTest
         [TestMethod]
-        public void TestConverterWithZeroHoure()
+        public void TestConverterWithZeroHours()
         {
-            var time = converter.ConvertTime("00:00:00");
-
-            Assert.AreEqual("YOOOOOOOOOOOOOOOOOOOOOOO", time);
+            AssertBerlinTime("00:00:00", "YOOOOOOOOOOOOOOOOOOOOOOO");
         }
 
         [TestMethod]
-        public void TestConverterWith23Houre()
+        public void TestConverterWith23Hours()
         {
-            var time = converter.ConvertTime("23:59:59");
-
-            Assert.AreEqual("ORRRRRRROYYRYYRYYRYYYYYY", time);
+            AssertBerlinTime("23:59:59", "ORRRRRRROYYRYYRYYRYYYYYY");
         }
 
         [TestMethod]
-        public void TestConverterWithRandomHoure()
+        public void TestConverterWithRandomHours()
         {
-            var time = converter.ConvertTime("16:50:06");
+            AssertBerlinTime("16:50:06", "YRRROROOOYYRYYRYYRYOOOOO");
+        }
 
-            Assert.AreEqual("YRRROROOOYYRYYRYYRYOOOOO", time);
+        private void AssertBerlinTime(string digitalTime, string expectedBerlinTime)
+        {
+            var time = converter.ConvertTime(digitalTime);
+
+            Assert.AreEqual(expectedBerlinTime, time);
         }
         #endregion
     }
