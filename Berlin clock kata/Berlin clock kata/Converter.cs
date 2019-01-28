@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace BerlinClockKata
@@ -57,16 +56,10 @@ namespace BerlinClockKata
         public string ConvertSecondLamp(string time)
         {
             var seconds = SelectSeconds(time);
-            if (IsEven(seconds))
-            {
-                return "O";
-            }
-            return "Y";
-        }
 
-        private bool IsEven(int integer)
-        {
-            return integer % 2 != 0;
+            return seconds.IsOdd()
+                    ? "O"
+                    : "Y";
         }
 
         private int SelectMinutes(string time)
@@ -89,5 +82,10 @@ namespace BerlinClockKata
     {
         public static string Repeat(this string s, int n)
             => new StringBuilder(s.Length * n).Insert(0, s, n).ToString();
+    }
+
+    public static class IntExtensions
+    {
+        public static bool IsOdd(this int value) => value % 2 != 0; 
     }
 }
