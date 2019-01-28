@@ -154,35 +154,34 @@ namespace Tests
 
         #region SecondLampTest
         [TestMethod]
-        public void TestSecondLanmpTestWithZeroHoure()
+        public void TestSecondLanmpTestWithZeroSeconds()
         {
-            var secondLamp = converter.ConvertSecondLamp("00:00:00");
-
-            Assert.AreEqual("Y", secondLamp);
+            AssertBerlinSeconds("00:00:00", "Y");
         }
 
         [TestMethod]
         public void TestSecondLanmpTestWithOneSecond()
         {
-            var secondLamp = converter.ConvertSecondLamp("00:00:01");
-
-            Assert.AreEqual("O", secondLamp);
+            AssertBerlinSeconds("00:00:01", "O");
         }
 
         [TestMethod]
-        public void TestSecondLanmpTestWithTwoSecond()
+        public void TestSecondLanmpTestWithTwoSeconds()
         {
-            var secondLamp = converter.ConvertSecondLamp("00:00:02");
-
-            Assert.AreEqual("Y", secondLamp);
+            AssertBerlinSeconds("00:00:02", "Y");
         }
 
         [TestMethod]
-        public void TestSecondLanmpTestWithTwoThree()
+        public void TestSecondLanmpTestWithTwoThreeSeconds()
         {
-            var secondLamp = converter.ConvertSecondLamp("00:00:03");
+            AssertBerlinSeconds("00:00:03", "O");
+        }
 
-            Assert.AreEqual("O", secondLamp);
+        private void AssertBerlinSeconds(string digitalTime, string expectedBerlinSeconds)
+        {
+            var secondLamp = converter.ConvertSecondLamp(digitalTime);
+
+            Assert.AreEqual(expectedBerlinSeconds, secondLamp);
         }
         #endregion
 
