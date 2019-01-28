@@ -194,7 +194,7 @@ namespace Tests
 
             var secondLamp = converter.ConvertSecondLamp("00:00:00");
 
-            Assert.AreEqual(secondLamp, "R");
+            Assert.AreEqual(secondLamp, "Y");
         }
 
         [TestMethod]
@@ -214,7 +214,7 @@ namespace Tests
 
             var secondLamp = converter.ConvertSecondLamp("00:00:02");
 
-            Assert.AreEqual(secondLamp, "R");
+            Assert.AreEqual(secondLamp, "Y");
         }
 
         [TestMethod]
@@ -234,7 +234,7 @@ namespace Tests
         {
             var converter = new Converter();
 
-            var secondLamp = converter.ConvertSecondLamp("00:00:00");
+            var secondLamp = converter.ConvertTime("00:00:00");
 
             Assert.AreEqual(secondLamp, "YOOOOOOOOOOOOOOOOOOOOOOO");
         }
@@ -244,7 +244,7 @@ namespace Tests
         {
             var converter = new Converter();
 
-            var secondLamp = converter.ConvertSecondLamp("23:59:59");
+            var secondLamp = converter.ConvertTime("23:59:59");
 
             Assert.AreEqual(secondLamp, "ORRRRRRROYYRYYRYYRYYYYYY");
         }
@@ -254,7 +254,7 @@ namespace Tests
         {
             var converter = new Converter();
 
-            var secondLamp = converter.ConvertSecondLamp("16:50:06");
+            var secondLamp = converter.ConvertTime("16:50:06");
 
             Assert.AreEqual(secondLamp, "YRRROROOOYYRYYRYYRYOOOOO");
         }

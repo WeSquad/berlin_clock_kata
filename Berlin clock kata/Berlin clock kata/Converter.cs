@@ -92,7 +92,7 @@ namespace BerlinClockKata
             {
                 return "O";
             }
-            return "R";
+            return "Y";
         }
 
         private bool IsEven(int integer)
