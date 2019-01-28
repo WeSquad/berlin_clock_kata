@@ -125,29 +125,30 @@ namespace Tests
         }
         #endregion
 
-        #region FiveHouretestRegionTest
+        #region FiveHoureTest
         [TestMethod]
-        public void TestFiveHoureRowTestWithZeroHoure()
+        public void TestFiveHoureRowTestWithZeroHours()
         {
-            var fiveHoureRow = converter.ConvertFiveHoureRow("00:00:00");
-
-            Assert.AreEqual("OOOO", fiveHoureRow);
+            AssertBerlinFiveHours("00:00:00", "OOOO");
         }
 
         [TestMethod]
-        public void TestFiveHoureRowTestWithFiveHoure()
+        public void TestFiveHoureRowTestWithFiveHours()
         {
-            var fiveHoureRow = converter.ConvertFiveHoureRow("05:00:00");
-
-            Assert.AreEqual("ROOO", fiveHoureRow);
+            AssertBerlinFiveHours("05:00:00", "ROOO");
         }
 
         [TestMethod]
-        public void TestFiveHoureRowTestWithTenHoure()
+        public void TestFiveHoureRowTestWithTenHours()
         {
-            var fiveHoureRow = converter.ConvertFiveHoureRow("10:00:00");
+            AssertBerlinFiveHours("10:00:00", "RROO");
+        }
 
-            Assert.AreEqual("RROO", fiveHoureRow);
+        private void AssertBerlinFiveHours(string digitalTime, string expectedBerlinFiveHours)
+        {
+            var fiveHoureRow = converter.ConvertFiveHoureRow(digitalTime);
+
+            Assert.AreEqual(expectedBerlinFiveHours, fiveHoureRow);
         }
         #endregion
 
