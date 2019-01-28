@@ -98,29 +98,30 @@ namespace Tests
         }
         #endregion
 
-        #region SingleHouretestRegionTest
+        #region SingleHourTest
         [TestMethod]
-        public void TestSingleHoureRowTestWithZeroHoure()
+        public void TestSingleHoureRowTestWithZeroHours()
         {
-            var singleHoureRow = converter.ConvertSingleHoureRow("00:00:00");
-
-            Assert.AreEqual("OOOO", singleHoureRow);
+            AssertBerlinSingleHour("00:00:00", "OOOO");
         }
 
         [TestMethod]
-        public void TestSingleHoureRowTestWithOneHoure()
+        public void TestSingleHoureRowTestWithOneHour()
         {
-            var singleHoureRow = converter.ConvertSingleHoureRow("01:00:00");
-
-            Assert.AreEqual("ROOO", singleHoureRow);
+            AssertBerlinSingleHour("01:00:00", "ROOO");
         }
 
         [TestMethod]
-        public void TestSingleHoureRowTestWithTwoHoure()
+        public void TestSingleHoureRowTestWithTwoHours()
         {
-            var singleHoureRow = converter.ConvertSingleHoureRow("02:00:00");
+            AssertBerlinSingleHour("02:00:00", "RROO");
+        }
 
-            Assert.AreEqual("RROO", singleHoureRow);
+        private void AssertBerlinSingleHour(string digitalTime, string expectedBerlinSingleHour)
+        {
+            var singleHoureRow = converter.ConvertSingleHoureRow(digitalTime);
+
+            Assert.AreEqual(expectedBerlinSingleHour, singleHoureRow);
         }
         #endregion
 
