@@ -4,11 +4,16 @@ using System.Text;
 
 namespace Berlin_clock_kata
 {
-    class Converter
+    public class Converter
     {
         public string ConvertTime(string time)
         {
             return "";
+        }
+
+        public string ConvertSingleMinutesRow(string time)
+        {
+            return "OOOO";
         }
     }
 }
