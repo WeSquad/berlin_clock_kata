@@ -6,12 +6,18 @@ namespace Tests
     [TestClass]
     public class ConverterTest
     {
+        private Converter Converter { get; set; }
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            Converter = new Converter();
+        }
+
         [TestMethod]
         public void SingleMinuteRow000000Test()
         {
-            var converter = new Converter();
-
-            var actual = converter.ConvertSingleMinutesRow("00:00:00");
+            var actual = Converter.ConvertSingleMinutesRow("00:00:00");
 
             Assert.AreEqual("OOOO", actual);
         }
@@ -19,9 +25,7 @@ namespace Tests
         [TestMethod]
         public void SingleMinuteRow000100Test()
         {
-            var converter = new Converter();
-
-            var actual = converter.ConvertSingleMinutesRow("00:01:00");
+            var actual = Converter.ConvertSingleMinutesRow("00:01:00");
 
             Assert.AreEqual("YOOO", actual);
         }

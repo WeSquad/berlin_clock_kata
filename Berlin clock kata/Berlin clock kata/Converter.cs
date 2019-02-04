@@ -13,13 +13,9 @@ namespace Berlin_clock_kata
 
         public string ConvertSingleMinutesRow(string time)
         {
-            if (time == "00:01:00")
-            {
-                return "YOOO";
-            }
-
-            return "OOOO";
+            if (time != "00:01:00") return "OOOO";
             
+            return "YOOO";
         }
     }
 }
