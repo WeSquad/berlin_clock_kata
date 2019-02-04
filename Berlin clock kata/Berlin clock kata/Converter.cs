@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Berlin_clock_kata
+﻿namespace Berlin_clock_kata
 {
     public class Converter
     {
@@ -13,18 +9,26 @@ namespace Berlin_clock_kata
 
         public string ConvertSingleMinutesRow(string time)
         {
-            if (time == "00:01:00")
+            var minute = SelectMinute(time);
+
+            if (minute == 1)
             {
                 return "YOOO";
             }
 
-            if (time == "00:02:00")
+            if (minute == 2)
             {
                 return "YYOO";
             }
 
             return "OOOO";
-            
+
+        }
+
+        private int SelectMinute(string time)
+        {
+            var minute = time.Substring(4, 1);
+            return int.Parse(minute);
         }
     }
 }
