@@ -15,6 +15,14 @@ namespace Tests
         }
 
         [TestMethod]
+        public void FiveMinuteRow000000Test()
+        {
+            var actual = Converter.ConvertFiveMinutesRow("00:00:00");
+
+            Assert.AreEqual("OOOOOOOOOOO", actual);
+        }
+
+        [TestMethod]
         public void SingleMinuteRow000000Test()
         {
             var actual = Converter.ConvertSingleMinutesRow("00:00:00");

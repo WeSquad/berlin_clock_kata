@@ -9,6 +9,11 @@ namespace Berlin_clock_kata
             return "";
         }
 
+        public string ConvertFiveMinutesRow(string time)
+        {
+            return "OOOOOOOOOOO";
+        }
+
         public string ConvertSingleMinutesRow(string time)
         {
             var lightsOn = SelectSingleMinuteRowMinute(time);
